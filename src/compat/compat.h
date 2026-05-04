@@ -901,7 +901,7 @@ static inline void skb_mark_not_on_list(struct sk_buff *skb)
 #define blake2s_update zinc_blake2s_update
 #define blake2s_final zinc_blake2s_final
 #endif
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 5, 0) && LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
 #define blake2s_hmac zinc_blake2s_hmac
 #define chacha20 zinc_chacha20
 #define hchacha20 zinc_hchacha20
@@ -946,7 +946,7 @@ static inline void skb_mark_not_on_list(struct sk_buff *skb)
 #define chacha20_neon zinc_chacha20_neon
 #endif
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 5, 0) && LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
 #define COMPAT_CRYPTO_IS_ZINC
 #define COMPAT_MAYBE_SIMD_CONTEXT(ctx) , ctx
 #else
@@ -1368,7 +1368,7 @@ static inline bool skb_queue_empty_lockless(const struct sk_buff_head *list)
 }
 #endif
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 5, 0) && LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
 #define NLA_POLICY_MASK(tp, _mask) { .type = tp }
 #endif
 
