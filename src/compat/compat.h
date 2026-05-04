@@ -1368,7 +1368,7 @@ static inline bool skb_queue_empty_lockless(const struct sk_buff_head *list)
 }
 #endif
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 5, 0) && LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
 #define NLA_POLICY_MASK(tp, _mask) { .type = tp }
 #endif
 
