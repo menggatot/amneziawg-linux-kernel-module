@@ -946,7 +946,7 @@ static inline void skb_mark_not_on_list(struct sk_buff *skb)
 #define chacha20_neon zinc_chacha20_neon
 #endif
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 5, 0) && LINUX_VERSION_CODE < KERNEL_VERSION(5, 10, 0)
 #define COMPAT_CRYPTO_IS_ZINC
 #define COMPAT_MAYBE_SIMD_CONTEXT(ctx) , ctx
 #else
