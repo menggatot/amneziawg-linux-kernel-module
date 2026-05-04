@@ -1087,7 +1087,14 @@ static inline void skb_reset_redirect(struct sk_buff *skb)
 #define pre_exit exit
 #endif
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 8, 0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 4, 0)
+#define chacha20_mod_init()         0
+#define poly1305_mod_init()         0
+#define chacha20poly1305_mod_init() 0
+#define blake2s_mod_init()          0
+#define curve25519_mod_init()       0
+#endif
+
 #include <linux/skbuff.h>
 #include <linux/ip.h>
 #include <linux/ipv6.h>
